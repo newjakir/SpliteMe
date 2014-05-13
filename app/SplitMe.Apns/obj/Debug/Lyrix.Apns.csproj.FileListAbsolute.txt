@@ -1,0 +1,13 @@
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Apns.dll
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Apns.pdb
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Domain.dll
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\NLog.dll
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Common.dll
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Domain.pdb
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Newtonsoft.Json.xml
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\NLog.xml
+E:\Projects\Lyrix\Lyrix.Apns\bin\Debug\Lyrix.Common.pdb
+E:\Projects\Lyrix\Lyrix.Apns\obj\Debug\Lyrix.Apns.csprojResolveAssemblyReference.cache
+E:\Projects\Lyrix\Lyrix.Apns\obj\Debug\Lyrix.Apns.dll
+E:\Projects\Lyrix\Lyrix.Apns\obj\Debug\Lyrix.Apns.pdb

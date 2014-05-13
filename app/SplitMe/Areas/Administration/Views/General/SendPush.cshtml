@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Send Push Notification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@section SubNavigation {
+    
+}*@
+
+@using (Ajax.BeginForm("SendPush", null, null, new { id = "targetform", @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+        <h2>@ViewBag.PageTitle</h2>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+                <div class="span8">
+
+                <div class="control-group">
+                    <label class="control-label" for="txtGenre">
+                        Device Token</label>
+                    <div class="controls">
+                        @Html.TextBox("txtToken", string.Empty, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="span12 well centered">
+			    <a class="btn btn-primary" href="#"  onclick="$('#targetform').submit();">Send</a>
+            </div>
+        </div>
+}

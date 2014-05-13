@@ -1,0 +1,10 @@
+E:\Projects\Niaz\Lyrix\Lyrix.Common\bin\Release\Lyrix.Common.dll
+E:\Projects\Niaz\Lyrix\Lyrix.Common\bin\Release\Lyrix.Common.pdb
+E:\Projects\Niaz\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.csprojResolveAssemblyReference.cache
+E:\Projects\Niaz\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.dll
+E:\Projects\Niaz\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.pdb
+E:\Projects\Lyrix\Lyrix.Common\bin\Release\Lyrix.Common.dll
+E:\Projects\Lyrix\Lyrix.Common\bin\Release\Lyrix.Common.pdb
+E:\Projects\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.dll
+E:\Projects\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.pdb
+E:\Projects\Lyrix\Lyrix.Common\obj\Release\Lyrix.Common.csprojResolveAssemblyReference.cache

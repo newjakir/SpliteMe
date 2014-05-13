@@ -1,0 +1,7 @@
+E:\Projects\SplitMe\SplitMe.Domain\bin\Debug\SplitMe.Domain.dll
+E:\Projects\SplitMe\SplitMe.Domain\bin\Debug\SplitMe.Domain.pdb
+E:\Projects\SplitMe\SplitMe.Domain\bin\Debug\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Domain\bin\Debug\SplitMe.Common.pdb
+E:\Projects\SplitMe\SplitMe.Domain\obj\Debug\SplitMe.Domain.csprojResolveAssemblyReference.cache
+E:\Projects\SplitMe\SplitMe.Domain\obj\Debug\SplitMe.Domain.dll
+E:\Projects\SplitMe\SplitMe.Domain\obj\Debug\SplitMe.Domain.pdb

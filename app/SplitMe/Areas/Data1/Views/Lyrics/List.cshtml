@@ -1,0 +1,17 @@
+﻿@model SplitMe.Common.Data.IPagedList<SplitMe.Domain.Lyrics>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SplitMe.MVC.Extensions;
+
+<div class="row">
+    <div class="span2 well centered">
+		<a class="btn btn-primary" href="@Url.Action("Add", "Lyrics")">Add New</a>
+    </div>
+</div>
+<div class="row">
+    <div id="dvQuestions" class="span12">
+        @Html.Partial("LyricsList", Model);
+    </div>
+</div>

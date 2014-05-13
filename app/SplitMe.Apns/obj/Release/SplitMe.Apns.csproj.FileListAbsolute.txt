@@ -1,0 +1,13 @@
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Apns.dll
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Apns.pdb
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\Newtonsoft.Json.dll
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\NLog.dll
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Domain.dll
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Domain.pdb
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\Newtonsoft.Json.xml
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\NLog.xml
+E:\Projects\SplitMe\SplitMe.Apns\bin\Release\SplitMe.Common.pdb
+E:\Projects\SplitMe\SplitMe.Apns\obj\Release\SplitMe.Apns.csprojResolveAssemblyReference.cache
+E:\Projects\SplitMe\SplitMe.Apns\obj\Release\SplitMe.Apns.dll
+E:\Projects\SplitMe\SplitMe.Apns\obj\Release\SplitMe.Apns.pdb

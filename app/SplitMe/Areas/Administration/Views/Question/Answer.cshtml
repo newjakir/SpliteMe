@@ -1,0 +1,9 @@
+﻿@model SplitMe.Domain.Answer
+
+@Html.Hidden("answerCode",Model.Code)
+@Html.TextBox("txtAnswers", "txtAnswers", Model.AnswerText, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+@Html.CheckBox("isCorrect", Model.IsCorrect);
+<a class="btn btn-danger" href="#" onclick=""><i class="icon-trash icon-white"></i> Delete</a>
+
+
+

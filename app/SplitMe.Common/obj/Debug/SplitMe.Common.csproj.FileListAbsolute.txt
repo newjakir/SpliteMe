@@ -1,0 +1,5 @@
+E:\Projects\SplitMe\SplitMe.Common\bin\Debug\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Common\bin\Debug\SplitMe.Common.pdb
+E:\Projects\SplitMe\SplitMe.Common\obj\Debug\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Common\obj\Debug\SplitMe.Common.pdb
+E:\Projects\SplitMe\SplitMe.Common\obj\Debug\SplitMe.Common.csprojResolveAssemblyReference.cache

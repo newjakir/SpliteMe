@@ -1,0 +1,100 @@
+﻿@model SplitMe.Common.Data.IPagedList<SplitMe.Domain.Lyrics>
+@using SplitMe.MVC.Extensions
+@{
+ object rvs = new
+    {
+        sidx = Request["sidx"],
+        sord = Request["sord"],
+        so = ViewData["so-val"],
+        st = ViewData["st-val"],
+        sc = Html.Encode(ViewData["sc-val"]),
+        //rid = Request["rid"],
+        snl = Request["snl"]
+    };
+
+ AjaxOptions ajo = new AjaxOptions { UpdateTargetId = "dvQuestions", LoadingElementId = "updating", InsertionMode = InsertionMode.Replace };
+    
+    <div id="updatingWrapper">
+        <div id="updating">
+        </div>
+    </div>
+
+    <div id="divQuestionSearch">
+        @using (Ajax.BeginForm("List", rvs, ajo, new { @class = "well form-horizontal form-inline" }))
+        {
+            <fieldset>
+                @Html.DropDownList("so")
+                @Html.DropDownList("st")
+                @Html.TextBox("sc", ViewData["sc-val"])
+                <input class="btn" type="submit" value="Search" />
+            </fieldset>
+        }
+    </div>
+
+    if (Model == null || Model.Count <= 0)
+    {
+        Html.RenderPartial("NoRecords", "");
+
+    }
+    else
+    { 
+            <table id="ListViewQuestion" class="table table-bordered table-condensed"  cellspacing="0">
+                <thead>
+                    <tr>
+
+                        <th>
+                            @Html.Raw(Ajax.SortableColumn("Ttile", "2", rvs, ajo))
+                        </th>
+				
+                        <th>
+                            @Html.Raw(Ajax.SortableColumn("Text", "3", rvs, ajo))
+                        </th>
+				
+                        <th>
+                            @Html.Raw(Ajax.SortableColumn("Genre", "1", rvs, ajo))
+                        </th>
+				
+                        <th>
+                            @Html.Raw(Ajax.SortableColumn("Artist", "4", rvs, ajo))
+                        </th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                @{string style = string.Empty;
+                  int ix = 0;
+                  foreach (SplitMe.Domain.Lyrics lyrics in Model)
+                  {
+                      style = ix % 2 == 0 ? "AltListItem" : "ListItem";
+
+                      ix++;
+
+                        <tr class="@style">
+                            <td>@Html.ActionLink(lyrics.Title, "Edit", "Lyrics", new { code = lyrics.Code }, null)</td>
+                            <td>@lyrics.LyricsText</td>
+                            <td>@lyrics.Genre.GenreText</td>
+                            <td>@lyrics.Artist.Name</td>
+                        </tr>
+                  }
+                }
+                </tbody>
+
+            </table>
+   
+            <div class="pagination pagination-centered">
+                 @Html.Raw(Ajax.Pager(new AjaxOptions
+                    {
+                        UpdateTargetId = "dvQuestions",
+                        LoadingElementId = "updating"
+                    },
+		            ViewData.Model.PageSize, ViewData.Model.PageNumber, ViewData.Model.TotalItemCount, 
+                    new { controller = "Question", action = "List", sidx=Request["sidx"], sord=Request["sord"],
+                          so = ViewData["so-val"],
+                          st = ViewData["st-val"],
+                          sc = Html.Encode(ViewData["sc-val"]), snl = Request["snl"]
+                    }))
+             </div>
+        }
+}
+
+

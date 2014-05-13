@@ -1,0 +1,4 @@
+E:\Projects\SplitMe\SplitMe.Common\bin\Release\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Common\bin\Release\SplitMe.Common.pdb
+E:\Projects\SplitMe\SplitMe.Common\obj\Release\SplitMe.Common.dll
+E:\Projects\SplitMe\SplitMe.Common\obj\Release\SplitMe.Common.pdb

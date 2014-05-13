@@ -1,0 +1,62 @@
+﻿@model List<SplitMe.Domain.Artist>
+
+@{
+    ViewBag.Title = "Artist List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="span2 well centered">
+		<a class="btn btn-primary" href="@Url.Action("Add", "Artist")">Add New</a>
+    </div>
+</div>
+
+<div class="row">
+    <div id="dvArtists" class="span12">
+
+    @{if (Model == null || Model.Count <= 0)
+    {
+        Html.RenderPartial("NoRecords", "");
+
+    }
+    else
+    {
+        <table id="genreList" class="table table-bordered table-condensed"  cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        Action
+                    </th>
+			        <th>
+                        Atrist
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    string style = string.Empty;
+                    int ix = 0;
+			        foreach (SplitMe.Domain.Artist a in Model)
+                    {
+                        style = ix % 2 == 0 ? "AltListItem" : "ListItem";
+
+                        ix++;
+             
+                        <tr class="@style">
+                        <td valign="top" width="75px">
+                                @Html.ActionLink("Edit", "Edit", "Artist", new { area = "Administration", id = a.Id }, null)
+                        </td>
+                        <td valign="top" width="285px">
+                            @a.Name
+                        </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+       }
+      }
+    </div>
+</div>
+

@@ -1,0 +1,67 @@
+﻿@model List<SplitMe.Domain.Genre>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="span2 well centered">
+		<a class="btn btn-primary" href="@Url.Action("Add", "Genre")">Add New</a>
+    </div>
+</div>
+
+<div class="row">
+    <div id="dvRecipes" class="span12">
+        <table id="genreList" class="table table-bordered table-condensed"  cellspacing="0">
+    <thead>
+        <tr>
+            <th>
+                Action
+            </th>
+			<th>
+                Genre
+            </th>
+            <th>
+                Logo
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            string style = string.Empty;
+            int ix = 0;
+            string basePath = System.Web.Configuration.WebConfigurationManager.AppSettings["LogoPath"].ToString();
+			foreach (SplitMe.Domain.Genre gen in Model)
+            {
+                style = ix % 2 == 0 ? "AltListItem" : "ListItem";
+                //string path = @Url.Content(gen.LogoPath);
+                ix++;
+             
+                <tr class="@style">
+                    <td>
+                            @Html.ActionLink("Edit", "Edit", "Genre", new { area = "Administration", code = gen.Code }, null)
+                    </td>
+                    <td>
+                        @gen.GenreText
+                    </td>
+                    <td>
+                       @if(!string.IsNullOrEmpty(gen.LogoPath))
+                       {
+                            string relPath = basePath + gen.LogoPath;
+                            <img src="@Url.Content(relPath)" alt="No Image" height="2"/>
+                       }
+                        else
+                        {
+                           <p>No Image</p>
+                       }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+    </div>
+</div>
+

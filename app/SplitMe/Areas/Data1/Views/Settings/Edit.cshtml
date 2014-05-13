@@ -1,0 +1,63 @@
+﻿@model SplitMe.Domain.Settings
+
+@{
+    ViewBag.Title = "Edit Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@section SubNavigation {
+    
+}*@
+
+@using (Ajax.BeginForm("Edit", null, new AjaxOptions { LoadingElementId = "updating", UpdateTargetId = "validation" }, new { id = "targetform", @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+        <h2>@ViewBag.PageTitle</h2>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+                <div class="span8">
+
+                <div class="control-group">
+                    <label class="control-label" for="txtGenre">
+                        First Time Limit (seconds)</label>
+                    <div class="controls">
+                        @Html.TextBox("txtFirstTimeLimit", Model.FirstTimeLimit, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+                <div class="span8">
+
+                <div class="control-group">
+                    <label class="control-label" for="txtGenre">
+                        Second Time Limit (seconds)</label>
+                    <div class="controls">
+                        @Html.TextBox("txtSecondTimeLimit", Model.SecondTimeLimit, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+                <div class="span8">
+
+                <div class="control-group">
+                    <label class="control-label" for="txtGenre">
+                        Third Time Limit (seconds)</label>
+                    <div class="controls">
+                        @Html.TextBox("txtThirdTimeLimit", Model.ThirdTimeLimit, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="span12 well centered">
+			    <a class="btn btn-primary" href="#"  onclick="$('#targetform').submit();">Save</a>
+            </div>
+        </div>
+}

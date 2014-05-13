@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css/bootstrap")
+   @* @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <div class="navbar navbar-fixed-top" id="topNav">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand pull-left">
+					SplitMe
+				</a>
+                
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+				    <ul class="nav">
+                    
+                        @**
+                        @{string stu = Url.Action("List", "Genre", new
+                            {
+                                area = "Data"
+                            });}
+					    <li><a href="@stu">Genres</a></li>
+
+                        @{string sta = Url.Action("List", "Artist", new
+                            {
+                                area = "Data"
+                            });}
+					    <li><a href="@sta">Artists</a></li>
+
+                        @{string qListUrl = Url.Action("List", "Lyrics", new
+                            {
+                                area = "Data"
+                            });}
+                        <li><a href="@qListUrl">Lyrics</a></li>
+
+                        @{string qSettingsUrl = Url.Action("Edit", "Settings", new
+                            {
+                                area = "Data"
+                            });}
+                        <li><a href="@qSettingsUrl">Settings</a></li>
+                        **@
+
+                        @{string testPushUrl = Url.Action("SendPush", "General", new
+                            {
+                                area = "Data"
+                            });}
+                        <li><a href="@testPushUrl">Push Notification</a></li>
+                    </ul>
+                }
+                <div class="nav pull-right">
+					<div class="btn-group">
+                        @if (!Context.User.Identity.IsAuthenticated)
+                        {
+                            string loginUrl = Url.Action("Login", "Account");
+                              <a class="btn btn-primary" href="@loginUrl">Login</a>
+                        }
+                        else
+                        {
+                            string logoutUrl = Url.Action("Logoff", "Account");
+                            <a class="btn btn-primary"><i class="icon-user icon-white"></i> @Context.User.Identity.Name</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+						    <ul class="dropdown-menu">
+							    <li><a><i class="icon-cog"></i>Edit Profile</a></li>
+							    <li class="divider"></li>
+							    <li><a href="/Account/Logoff"><i class="icon-off"></i>Logout</a></li>
+						    </ul>
+                        }
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    @*<div id="sub-nav"></div>*@
+    <div class="container">
+    <div class="row">
+			&nbsp;</div>
+		<div class="row">
+			&nbsp;</div>
+		<div class="row">
+			&nbsp;</div>
+		<div class="row">
+			&nbsp;</div>
+		<div class="row">
+			&nbsp;</div>
+    <div id="mainContent" class="row">
+			<div class="span12">
+    @RenderBody()
+
+    </div></div></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+@*<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>*@

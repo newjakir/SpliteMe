@@ -1,0 +1,109 @@
+﻿@model SplitMe.Domain.Lyrics
+@using SplitMe.Domain
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Ajax.BeginForm("Edit", new {code = Request["code"] }, new AjaxOptions { LoadingElementId = "updating", UpdateTargetId = "validation" }, new { id = "targetform", @class = "form-horizontal" }))
+{
+        <h2>@ViewBag.PageTitle</h2>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+                <div class="span8">
+
+                <div class="control-group">
+
+                    <label class="control-label" for="txtGenre">
+                        Genre:</label>
+                    <div class="controls">
+                        @Html.DropDownList("Genres", null, new { @class = "textbox" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+
+                    <label class="control-label" for="txtArtist">
+                        Artist:</label>
+                    <div class="controls">
+                        @Html.DropDownList("artists", null, new { @class = "textbox" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtTitle">
+                        Lyrics Title</label>
+                    <div class="controls">
+                        @Html.TextBox("txtTitle", Model.Title, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="txtText">
+                        Lyrics Text</label>
+                    <div class="controls">
+                        @Html.TextBox("txtText", Model.LyricsText, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtCorrectAnswer">
+                        Correct Answer</label>
+                    <div class="controls">
+                        @Html.TextBox("txtCorrectAnswer", Model.CorrectAnswer, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtWrongAnswer1">
+                        Wrong Answer</label>
+                    <div class="controls">
+                        @Html.TextBox("txtWrongAnswer1", Model.WrongAnswer1, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtWrongAnswer2">
+                        Wrong Answer</label>
+                    <div class="controls">
+                        @Html.TextBox("txtWrongAnswer2", Model.WrongAnswer2, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtWrongAnswer3">
+                        Wrong Answer</label>
+                    <div class="controls">
+                        @Html.TextBox("txtWrongAnswer3", Model.WrongAnswer3, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+
+                </div>
+                @*<div class="control-group">
+                    <label class="control-label" for="txtQuestion">
+                        Question Text</label>
+                    <div class="controls">
+                        @Html.TextBox("txtQuestion", Model.QuestionText, new Dictionary<string, object> { { "class", "textbox" }, { "maxlength", "50" } })
+                    </div>
+                </div>*@
+
+                @*<div class="control-group">
+                    <label class="control-label" for="txtQuestion">
+                        Answers: </label>
+                    <div class="controls">
+                        @foreach(Answer ans in Model.Answers)
+                        {
+                            Html.RenderPartial("Answers", ans);
+                        }
+                    </div>
+                </div>*@
+            </div>
+        </div>
+        string delScript = "deleteLyrics('" + Model.Code + "');";    
+        <div class="row">
+            <div class="span12 well centered">
+			    <a class="btn btn-danger" href="#" onclick="@delScript"><i class="icon-trash icon-white"></i> Delete</a>
+			    <a class="btn btn-primary" href="#"  onclick="$('#targetform').submit();">Save</a>
+            </div>
+        </div>
+}

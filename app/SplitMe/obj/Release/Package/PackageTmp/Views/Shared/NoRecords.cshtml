@@ -1,0 +1,37 @@
+﻿@model string
+
+<table class="grid" cellspacing="0">
+    <thead>
+    </thead>
+    <tbody>
+        @{
+	        // forcibly remove &sc parameter to reset search
+	        int scIx = 0; 
+	        int qIx = 0;
+	        string url = Request.Url.ToString();
+	        scIx = url.IndexOf("sc=");
+	        if(scIx > 0)
+            {
+		        qIx = url.IndexOf("&", scIx);
+            }
+	        if (qIx > 0) {
+		        url = url.Remove(scIx, qIx - (scIx ));
+	        }
+	        url = url.Replace("&&", "&");
+
+	        string exec = "makeRESTCall('" + url + "','','" + Model + "'); return false;";
+        }
+        <h3>	No items found...&nbsp; 
+	    
+            @{if (!string.IsNullOrEmpty(Request.QueryString["du"])) {
+			        <a id="zeroresult" href="#" onclick="@exec">show all</a>
+                 }else 
+                 {
+			         <a href="@url">show all</a>
+	             }
+            }
+	    </h3>
+     </tbody>
+</table>
+ 
+
